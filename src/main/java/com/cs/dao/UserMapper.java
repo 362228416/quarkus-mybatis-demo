@@ -8,10 +8,10 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    @Select("select * from user")
+    @Select("select id, username, password from user")
     List<User> findAll();
 
-    @Select("select * from user where id = #{id}")
+    @Select("select id, username, password from user where id = #{id}")
     User findById(@Param("id") int id);
 
     @Insert("insert into user(username,password) values(#{em.username},#{em.password})")
